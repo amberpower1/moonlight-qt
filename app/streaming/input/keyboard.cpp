@@ -12,6 +12,8 @@
 #define VK_F1 0x70
 #define VK_F13 0x7C
 #define VK_NUMPAD0 0x60
+#endif
+
 #ifndef VK_ABNT_C1
 #define VK_ABNT_C1 0xC1
 #endif
