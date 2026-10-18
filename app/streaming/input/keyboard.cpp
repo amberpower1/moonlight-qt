@@ -12,6 +12,8 @@
 #define VK_F1 0x70
 #define VK_F13 0x7C
 #define VK_NUMPAD0 0x60
+#ifndef VK_ABNT_C1
+#define VK_ABNT_C1 0xC1
 #endif
 
 void SdlInputHandler::performSpecialKeyCombo(KeyCombo combo)
@@ -482,8 +484,10 @@ void SdlInputHandler::handleKeyEvent(SDL_KeyboardEvent* event)
                 break;
             case SDL_SCANCODE_INTERNATIONAL1:
                 shouldNotConvertToScanCodeOnServer = true;
-                Q_FALLTHROUGH();
+                keyCode = VK_ABNT_C1;
+                break;
             case SDL_SCANCODE_NONUSBACKSLASH:
+                shouldNotConvertToScanCodeOnServer = true;
                 keyCode = 0xE2;
                 break;
             case SDL_SCANCODE_LANG1:
